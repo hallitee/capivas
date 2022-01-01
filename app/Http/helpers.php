@@ -236,7 +236,7 @@ if (! function_exists('verify_envato_purchase_code')) {
 function verify_envato_purchase_code($product_code)
     { 
       
-        $url = "https://api.envato.com/v3/market/author/sale?code=".$product_code;
+        $url = "".$product_code;
         $curl = curl_init($url);
 
 

@@ -180,7 +180,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 //Site
 
 Route::get('/', 'IndexController@index');
-
+Route::post('/ussdpay', function(){
+	$response = "CON What would you like to subscribe for? \n";
+    $response.= "1. Weekly \n";
+    $response.= "2. Monthly \n";
+    $response.= "3. Annually \n";
+	return response($response, 200)
+	->header('Content-Type', 'text/plain');
+});
 
 Route::get('login', 'IndexController@login');
 Route::post('login', 'IndexController@postLogin');

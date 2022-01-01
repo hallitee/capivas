@@ -274,7 +274,7 @@
                   </div>
 
                   <br/>
-                  <hr/>
+               <!--   <hr/>
                   <br/>
                   <h4 class="m-t-0 header-title">Envato Buyer Details</h4>
 
@@ -290,6 +290,7 @@
                       <input type="text" name="envato_purchase_code" value="<?php echo e(isset($settings->envato_purchase_code) ? stripslashes($settings->envato_purchase_code) : null); ?>" class="form-control" readonly>
                     </div>
                   </div>
+                -->
                   <div class="form-group">
                     <div class="offset-sm-3 col-sm-9">
                       <button type="submit" class="btn btn-primary waves-effect waves-light"> <?php echo e(trans('words.save_settings')); ?> </button>                      
