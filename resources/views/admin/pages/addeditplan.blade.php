@@ -77,7 +77,15 @@
                       <input type="text" name="plan_price" value="{{ isset($plan_info->plan_price) ? $plan_info->plan_price : null }}" class="form-control" placeholder="9.99">
                     </div>
                   </div>   
-
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">{{trans('words.en_vas')}}</label>
+                      <div class="col-sm-8">
+                            <select class="form-control" name="plan_vas">                               
+                                <option value="YES" @if(isset($plan_info->plan_vas) AND $plan_info->plan_vas=='YES') selected @endif>{{trans('words.en')}}</option>
+                                <option value="NO" @if(isset($plan_info->plan_vas) AND $plan_info->plan_vas=='NO') selected @endif>{{trans('words.den')}}</option>                            
+                            </select>
+                      </div>
+                  </div>
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">{{trans('words.status')}}</label>
                       <div class="col-sm-8">

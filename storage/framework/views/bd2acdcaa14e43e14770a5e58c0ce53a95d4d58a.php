@@ -56,7 +56,7 @@
             </li>
  
             <li><a href="<?php echo e(URL::to('admin/subscription_plan')); ?>" class="waves-effect <?php echo e(classActivePath('subscription_plan')); ?>"><i class="fa fa-dollar"></i> <span><?php echo e(trans('words.subscription_plan')); ?></span></a></li>
-
+            <li><a href="<?php echo e(URL::to('admin/subscription_plan')); ?>" class="waves-effect <?php echo e(classActivePath('subscription_plan')); ?>"><i class="fa fa-credit-card"></i> <span><?php echo e(trans('words.vas_template')); ?></span></a></li>
             <li><a href="<?php echo e(URL::to('admin/transactions')); ?>" class="waves-effect <?php echo e(classActivePath('transactions')); ?>"><i class="fa fa-list"></i> <span> <?php echo e(trans('words.transactions')); ?></span></a></li>
 
             <li class="has_sub"> 

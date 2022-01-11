@@ -36,7 +36,14 @@ if (! function_exists('recently_watched_info')) {
         return $recently_info;
     }
 }
+if (! function_exists('putPermanentEnvv')) {
 
+ function putPermanentEnvv($key, $value)
+{
+   config([$key=>$value]);
+}
+
+}
 if (! function_exists('putPermanentEnv')) {
 
  function putPermanentEnv($key, $value)

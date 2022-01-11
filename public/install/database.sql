@@ -694,6 +694,7 @@ CREATE TABLE `subscription_plan` (
   `plan_duration` varchar(255) NOT NULL,
   `plan_duration_type` varchar(255) NOT NULL,
   `plan_price` decimal(11,2) NOT NULL,
+  `plan_vas` varchar(255) NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -702,10 +703,10 @@ CREATE TABLE `subscription_plan` (
 --
 
 INSERT INTO `subscription_plan` (`id`, `plan_name`, `plan_days`, `plan_duration`, `plan_duration_type`, `plan_price`, `status`) VALUES
-(1, 'Basic Plan', 7, '7', '1', '2.00', 1),
-(2, 'Premium Plan', 30, '1', '30', '10.00', 1),
-(3, 'Platinum Plan', 365, '1', '365', '49.00', 1),
-(4, 'Free Plan', 1, '1', '1', '0.00', 1);
+(1, 'Basic Plan', 7, '7', '1', '2.00', 'NO', 1),
+(2, 'Premium Plan', 30, '1', '30', '10.00', 'NO', 1),
+(3, 'Platinum Plan', 365, '1', '365', '49.00','NO', 1),
+(4, 'Free Plan', 1, '1', '1', '0.00','NO', 1);
 
 -- --------------------------------------------------------
 
@@ -1041,4 +1042,6 @@ ALTER TABLE `transaction`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
- 
+
+ALTER TABLE `subscription_plan` 
+  ADD `plan_vas` ENUM('YES','NO','','') NOT NULL DEFAULT 'NO' AFTER `plan_price`;

@@ -5,8 +5,10 @@ return [
 	//*******Admin Side************/
 
     //Login
+    'en' => 'Enabled',
+    'den' => 'Disabled',
 	'sign_in' => 'Sign In',
-
+    'en_vas' => 'VAS Plan',
     'email' => 'Email',
     'password' => 'Password',
     'remember_me' => 'Remember me',
@@ -31,6 +33,7 @@ return [
     'users' => 'Users',
     'admin' => 'Sub Admin',
     'subscription_plan' => 'Subscription Plans',
+    'vas_template' => 'VAS USSD Template',
     'transactions' => 'Transactions',
     'pages' => 'Pages',
     'about_us' => 'About Us',

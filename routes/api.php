@@ -12,7 +12,16 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::post('/ussdpay', function(Request $req){
+    /*
+    $response = "CON What would you like to subscribe for? \n";
+    $response.= "1. Weekly \n";
+    $response.= "2. Monthly \n";
+    $response.= "3. Annually \n";
+    */
+    return response($req->all(), 200)
+    ->header('Content-Type', 'text/plain');
+});
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -21,7 +30,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'v1','namespace' => 'API'], function(){
     
     //Route::apiResource('customers', 'AndroidApiController');
-
+    Route::post('/vaspay', 'VasApiController@index');
     Route::get('/', 'AndroidApiController@index');
     Route::post('app_details', 'AndroidApiController@app_details');
     Route::post('player_settings', 'AndroidApiController@player_settings');

@@ -56,7 +56,7 @@
             </li>
  
             <li><a href="{{ URL::to('admin/subscription_plan') }}" class="waves-effect {{classActivePath('subscription_plan')}}"><i class="fa fa-dollar"></i> <span>{{trans('words.subscription_plan')}}</span></a></li>
-
+            <li><a href="{{ URL::to('admin/subscription_plan') }}" class="waves-effect {{classActivePath('subscription_plan')}}"><i class="fa fa-credit-card"></i> <span>{{trans('words.vas_template')}}</span></a></li>
             <li><a href="{{ URL::to('admin/transactions') }}" class="waves-effect {{classActivePath('transactions')}}"><i class="fa fa-list"></i> <span> {{trans('words.transactions')}}</span></a></li>
 
             <li class="has_sub"> 

@@ -105,6 +105,7 @@ class SubscriptionPlanController extends MainAdminController
          $plan_obj->plan_duration_type = $inputs['plan_duration_type']; 
          $plan_obj->plan_days = $plan_days_final;           
          $plan_obj->plan_price = $inputs['plan_price']; 
+         $plan_obj->plan_vas = $inputs['plan_vas']; 
          $plan_obj->status = $inputs['status']; 
          
          $plan_obj->save();

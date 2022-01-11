@@ -61,9 +61,9 @@ class SettingsController extends MainAdminController
 
 	    $inputs = $request->all();
 
-        putPermanentEnv('APP_TIMEZONE', $inputs['time_zone']);
-        putPermanentEnv('APP_LANG', $inputs['default_language']);
- 
+
+        putPermanentEnvv('app.timezone', $inputs['time_zone']);
+        putPermanentEnvv('app.lang', $inputs['default_language']);
         $settings->time_zone = $inputs['time_zone'];
         $settings->default_language = $inputs['default_language']; 
         $settings->styling = $inputs['styling']; 
