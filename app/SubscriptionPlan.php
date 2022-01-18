@@ -8,7 +8,7 @@ class SubscriptionPlan extends Model
 {
     protected $table = 'subscription_plan';
 
-    protected $fillable = ['plan_name','plan_days','plan_duration','plan_price', 'plan_vas'];
+    protected $fillable = ['plan_name','plan_days','plan_duration','plan_price', 'vas_code','plan_vas'];
 
 
 	public $timestamps = false; 

@@ -87,6 +87,12 @@
                       </div>
                   </div>
                   <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">{{trans('words.vas_code')}}*</label>
+                    <div class="col-sm-8">
+                      <input type="number" name="vas_code" value="{{ isset($plan_info->vas_code) ? $plan_info->vas_code : null }}" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group row">
                     <label class="col-sm-3 col-form-label">{{trans('words.status')}}</label>
                       <div class="col-sm-8">
                             <select class="form-control" name="status">                               

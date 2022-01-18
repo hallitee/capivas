@@ -32,6 +32,7 @@
                       <th>{{trans('words.duration')}}</th>
                       <th>{{trans('words.price')}}</th>
                        <th>{{trans('words.en_vas')}}</th>
+                       <th>{{trans('words.vas_code')}}</th>
                       <th>{{trans('words.status')}}</th>                       
                       <th>{{trans('words.action')}}</th>
                     </tr>
@@ -43,7 +44,9 @@
                       <td>{{ App\SubscriptionPlan::getPlanDuration($plan_data->id) }}</td>
                       <td>{{getcong('currency_code')}} {{ $plan_data->plan_price }}</td>
                       <td>{{$plan_data->plan_vas}}</td>
+                      <td>{{$plan_data->vas_code}}</td>
                       <td>@if($plan_data->status==1)<span class="badge badge-success">{{trans('words.active')}}</span> @else<span class="badge badge-danger">{{trans('words.inactive')}}</span>@endif</td>                       
+                    
                       <td>
                       <a href="{{ url('admin/subscription_plan/edit_plan/'.$plan_data->id) }}" class="btn btn-icon waves-effect waves-light btn-success m-b-5 m-r-5" data-toggle="tooltip" title="{{trans('words.edit')}}"> <i class="fa fa-edit"></i> </a>
                       <a href="{{ url('admin/subscription_plan/delete/'.$plan_data->id) }}" class="btn btn-icon waves-effect waves-light btn-danger m-b-5" onclick="return confirm('{{trans('words.dlt_warning_text')}}')" data-toggle="tooltip" title="{{trans('words.remove')}}"> <i class="fa fa-remove"></i> </a>           

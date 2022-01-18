@@ -31,6 +31,7 @@
                       <th><?php echo e(trans('words.duration')); ?></th>
                       <th><?php echo e(trans('words.price')); ?></th>
                        <th><?php echo e(trans('words.en_vas')); ?></th>
+                       <th><?php echo e(trans('words.vas_code')); ?></th>
                       <th><?php echo e(trans('words.status')); ?></th>                       
                       <th><?php echo e(trans('words.action')); ?></th>
                     </tr>
@@ -42,7 +43,9 @@
                       <td><?php echo e(App\SubscriptionPlan::getPlanDuration($plan_data->id)); ?></td>
                       <td><?php echo e(getcong('currency_code')); ?> <?php echo e($plan_data->plan_price); ?></td>
                       <td><?php echo e($plan_data->plan_vas); ?></td>
+                      <td><?php echo e($plan_data->vas_code); ?></td>
                       <td><?php if($plan_data->status==1): ?><span class="badge badge-success"><?php echo e(trans('words.active')); ?></span> <?php else: ?><span class="badge badge-danger"><?php echo e(trans('words.inactive')); ?></span><?php endif; ?></td>                       
+                    
                       <td>
                       <a href="<?php echo e(url('admin/subscription_plan/edit_plan/'.$plan_data->id)); ?>" class="btn btn-icon waves-effect waves-light btn-success m-b-5 m-r-5" data-toggle="tooltip" title="<?php echo e(trans('words.edit')); ?>"> <i class="fa fa-edit"></i> </a>
                       <a href="<?php echo e(url('admin/subscription_plan/delete/'.$plan_data->id)); ?>" class="btn btn-icon waves-effect waves-light btn-danger m-b-5" onclick="return confirm('<?php echo e(trans('words.dlt_warning_text')); ?>')" data-toggle="tooltip" title="<?php echo e(trans('words.remove')); ?>"> <i class="fa fa-remove"></i> </a>           

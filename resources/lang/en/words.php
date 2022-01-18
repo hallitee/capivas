@@ -9,6 +9,7 @@ return [
     'den' => 'Disabled',
 	'sign_in' => 'Sign In',
     'en_vas' => 'VAS Plan',
+    'vas_code' => 'VAS Code',
     'email' => 'Email',
     'password' => 'Password',
     'remember_me' => 'Remember me',
@@ -291,7 +292,7 @@ return [
     'successfully_updated' => 'Successfully updated!',
     'added' => 'Added!',
     'deleted' => 'Deleted',
-    'email_password_invalid' => 'The email or the password is invalid. Please try again.',
+    'email_password_invalid' => 'The email/phone or the password is invalid. Please try again.',
     'account_banned' => 'You account has been banned!',
     'account_created_successfully' => 'Thanks! your account has been successfully created.',
 

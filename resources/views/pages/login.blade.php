@@ -49,7 +49,7 @@
 
       <div class="basic-field">
         <label>
-         <p><input type="text" name="email" value="" placeholder="{{trans('words.email')}}"></p>
+         <p><input type="text" name="email" value="" placeholder="{{trans('words.email')}} / {{trans('words.phone')}}"></p>
         </label>
         <label>
         <p><input type="password" name="password" value="" placeholder="{{trans('words.password')}}" ></p>
@@ -125,6 +125,9 @@
         <label>
           <p><input type="email" name="email" value="{{old('email')}}" placeholder="{{trans('words.email')}}" ></p>
         </label>
+        <label>
+          <p><input type="text" name="phone" value="{{old('phone')}}" placeholder="{{trans('words.phone')}}" ></p>
+        </label>        
         <label>
           <p><input type="password" name="password" placeholder="{{trans('words.password')}} {{trans('words.at_least_8_char')}}" ></p>
         </label>

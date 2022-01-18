@@ -68,13 +68,15 @@ class SubscriptionPlanController extends MainAdminController
                 
                 $rule=array(
                 'plan_name' => 'required',
-                'plan_price' => 'required'                 
+                'plan_price' => 'required',
+                'vas_code' => 'numeric|unique:subscription_plan'              
                  );
         }else
         {
             $rule=array(
                 'plan_name' => 'required',
-                'plan_price' => 'required'                  
+                'plan_price' => 'required',
+                'vas_code' => 'numeric|unique:subscription_plan'               
                  );
         }
 
@@ -104,6 +106,7 @@ class SubscriptionPlanController extends MainAdminController
          $plan_obj->plan_duration = $inputs['plan_duration']; 
          $plan_obj->plan_duration_type = $inputs['plan_duration_type']; 
          $plan_obj->plan_days = $plan_days_final;           
+         $plan_obj->vas_code = $inputs['vas_code'];
          $plan_obj->plan_price = $inputs['plan_price']; 
          $plan_obj->plan_vas = $inputs['plan_vas']; 
          $plan_obj->status = $inputs['status']; 

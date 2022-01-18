@@ -164,7 +164,8 @@ class IndexController extends Controller
         $data =  \Request::except(array('_token'));     
                 
         $rule=array(
-                'email' => 'required|email',
+                'email' => 'required',
+               // 'phone' => 'required|numeric|min:10',
                 'password' => 'required'                
                  );
         
@@ -178,12 +179,14 @@ class IndexController extends Controller
                 return redirect()->back()->withErrors($validator->messages());
         }
 
-        $credentials = $request->only('email', 'password');
-
-         
+      //  $credentials = $request->only('email', 'password');
+        //if()
+       // var_dump($credentials);
+       // die("Wait here ") ;
         
-         if (Auth::attempt($credentials, $request->has('remember'))) {
-
+        // if (Auth::attempt($credentials, $request->has('remember'))) {
+if(Auth::attempt(['phone' => request('email'), 'password' => request('password')]) ||
+Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             if(Auth::user()->status=='0'){
                 \Auth::logout();
                 //return array("errors" => 'You account has been banned!');
@@ -249,7 +252,8 @@ class IndexController extends Controller
         $inputs = $request->all();
         
         $rule=array(
-                'name' => 'required',                
+                'name' => 'required',
+                'phone'=>'required|numeric|min:10|unique:users',                
                 'email' => 'required|email|max:200|unique:users',
                 'password' => 'required|confirmed|min:8',
                 'password_confirmation' => 'required'                
@@ -272,7 +276,8 @@ class IndexController extends Controller
         
         $user->usertype = 'User';
         $user->name = $inputs['name']; 
-        $user->email = $inputs['email'];         
+        $user->email = $inputs['email'];   
+        $user->phone = $inputs['phone'];
         $user->password= bcrypt($inputs['password']);          
         $user->save();
 

@@ -32,6 +32,9 @@
       <label>{{trans('words.email')}}:- <br/>
           <p><input type="email" name="email" placeholder="Email" required></p>
       </label>
+      <label>{{trans('words.phone')}}:- <br/>sss
+          <p><input type="text" name="phone" placeholder="Phone" required></p>
+      </label>      
       <label>{{trans('words.password')}}:- <br/>
           <p><input type="password" name="password" placeholder="Password" required></p>
       </label>      

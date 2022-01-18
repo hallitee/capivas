@@ -49,7 +49,7 @@
 
       <div class="basic-field">
         <label>
-         <p><input type="text" name="email" value="" placeholder="<?php echo e(trans('words.email')); ?>"></p>
+         <p><input type="text" name="email" value="" placeholder="<?php echo e(trans('words.email')); ?> / <?php echo e(trans('words.phone')); ?>"></p>
         </label>
         <label>
         <p><input type="password" name="password" value="" placeholder="<?php echo e(trans('words.password')); ?>" ></p>
@@ -128,6 +128,9 @@
         <label>
           <p><input type="email" name="email" value="<?php echo e(old('email')); ?>" placeholder="<?php echo e(trans('words.email')); ?>" ></p>
         </label>
+        <label>
+          <p><input type="text" name="phone" value="<?php echo e(old('phone')); ?>" placeholder="<?php echo e(trans('words.phone')); ?>" ></p>
+        </label>        
         <label>
           <p><input type="password" name="password" placeholder="<?php echo e(trans('words.password')); ?> <?php echo e(trans('words.at_least_8_char')); ?>" ></p>
         </label>

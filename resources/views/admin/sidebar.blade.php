@@ -88,7 +88,7 @@
 
                </ul>
             </li> 
-
+            <!---
             <li class="has_sub"> 
               <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-android"></i><span>{{trans('words.android_app')}} </span> <span class="menu-arrow"></span></a>
               <ul class="list-unstyled">                 
@@ -101,7 +101,7 @@
                 @endif 
                </ul>
             </li> 
-
+              -->
             @else
 
               <ul>
