@@ -32,7 +32,10 @@ class PaystackController extends Controller
         
          
         $user_email=Auth::user()->email;
-        $amount=$inputs['amount']*100; 
+        //var_dump($inputs);
+       //
+       echo $inputs["amount"];
+       $amount= floatval($inputs["amount"])*100000; 
 
          
 
