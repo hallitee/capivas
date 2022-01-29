@@ -35,7 +35,7 @@ class PaystackController extends Controller
         //var_dump($inputs);
        //
        echo $inputs["amount"];
-       $amount= floatval($inputs["amount"])*100000; 
+       $amount= floatval($inputs["amount"])*100; 
 
          
 
