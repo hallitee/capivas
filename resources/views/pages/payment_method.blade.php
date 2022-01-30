@@ -55,6 +55,7 @@
           <div class="member-ship-option select_plan">
             <span><img src="{{ URL::asset('site_assets/images/icons/ic_stripe.png') }}" alt="stripe" /></span> 
             <p>{{trans('words.pay_with_stripe')}}</p>
+            <p>{{getcong("currency_code")." ".number_format($plan_info->plan_price)}}</p>
             <a href="{{ URL::to('stripe/'.$plan_info->id) }}">{{trans('words.pay_now')}}</a>
           </div>
         </div>
@@ -65,6 +66,7 @@
           <div class="member-ship-option select_plan">
             <span><img src="{{ URL::asset('site_assets/images/icons/razorpay.png') }}" alt="razorpay" /></span> 
             <p>{{trans('words.pay_with_razorpay')}}</p>
+            <p>{{getcong("currency_code")." ".number_format($plan_info->plan_price)}}</p>
             <a href="{{ URL::to('razorpay/') }}">{{trans('words.pay_now')}}</a>
           </div>
         </div>
@@ -74,10 +76,11 @@
         @if(getcong('paystack_payment_on_off')==1)        
         <div class="col-md-6 col-sm-4 col-xs-12">
           {!! Form::open(array('url' => 'pay','class'=>'','id'=>'','role'=>'form','method'=>'POST')) !!}
-          <input type="hidden" name="amount" value="{{number_format($plan_info->plan_price,2)}}">
+          <input type="hidden" name="amount" value="{{$plan_info->plan_price}}">
           <div class="member-ship-option select_plan">
             <span><img src="{{ URL::asset('site_assets/images/icons/paystack.png') }}" alt="paystack" /></span> 
             <p>{{trans('words.pay_with_paystack')}}</p>
+            <p>{{getcong("currency_code")." ".number_format($plan_info->plan_price)}}</p>
             <button type="submit" class="pure-button btn btn-primary">{{trans('words.pay_now')}}</button>
           </div>
           {!! Form::close() !!}

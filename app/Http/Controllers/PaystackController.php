@@ -34,9 +34,15 @@ class PaystackController extends Controller
         $user_email=Auth::user()->email;
         //var_dump($inputs);
        //
-       echo $inputs["amount"];
-       $amount= floatval($inputs["amount"])*100; 
+      // echo $inputs["amount"];
+       $cost = $inputs["amount"];
+      //  echo $cost."<br>";
+      //  echo gettype($cost)."<br>";
+      //  echo "Is numeric ".is_numeric($cost)."<br>";
 
+       $amount= $cost * 100; 
+
+        //die("$amount");
          
 
         //Paystack::genTranxRef();

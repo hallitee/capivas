@@ -54,6 +54,7 @@
           <div class="member-ship-option select_plan">
             <span><img src="<?php echo e(URL::asset('site_assets/images/icons/ic_stripe.png')); ?>" alt="stripe" /></span> 
             <p><?php echo e(trans('words.pay_with_stripe')); ?></p>
+            <p><?php echo e(getcong("currency_code")." ".number_format($plan_info->plan_price)); ?></p>
             <a href="<?php echo e(URL::to('stripe/'.$plan_info->id)); ?>"><?php echo e(trans('words.pay_now')); ?></a>
           </div>
         </div>
@@ -64,6 +65,7 @@
           <div class="member-ship-option select_plan">
             <span><img src="<?php echo e(URL::asset('site_assets/images/icons/razorpay.png')); ?>" alt="razorpay" /></span> 
             <p><?php echo e(trans('words.pay_with_razorpay')); ?></p>
+            <p><?php echo e(getcong("currency_code")." ".number_format($plan_info->plan_price)); ?></p>
             <a href="<?php echo e(URL::to('razorpay/')); ?>"><?php echo e(trans('words.pay_now')); ?></a>
           </div>
         </div>
@@ -74,10 +76,11 @@
         <div class="col-md-6 col-sm-4 col-xs-12">
           <?php echo Form::open(array('url' => 'pay','class'=>'','id'=>'','role'=>'form','method'=>'POST')); ?>
 
-          <input type="hidden" name="amount" value="<?php echo e(number_format($plan_info->plan_price,2)); ?>">
+          <input type="hidden" name="amount" value="<?php echo e($plan_info->plan_price); ?>">
           <div class="member-ship-option select_plan">
             <span><img src="<?php echo e(URL::asset('site_assets/images/icons/paystack.png')); ?>" alt="paystack" /></span> 
             <p><?php echo e(trans('words.pay_with_paystack')); ?></p>
+            <p><?php echo e(getcong("currency_code")." ".number_format($plan_info->plan_price)); ?></p>
             <button type="submit" class="pure-button btn btn-primary"><?php echo e(trans('words.pay_now')); ?></button>
           </div>
           <?php echo Form::close(); ?>
