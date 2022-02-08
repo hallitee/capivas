@@ -205,10 +205,11 @@ class SettingsController extends MainAdminController
 
         $inputs = $request->all();
         
-        putPermanentEnv('STRIPE_SECRET', $inputs['stripe_secret_key']);
+       // putPermanentEnv('STRIPE_SECRET', $inputs['stripe_secret_key']);
         
         $settings->currency_code = $inputs['currency_code'];
 
+        /*
         $settings->paypal_payment_on_off = $inputs['paypal_payment_on_off'];
         $settings->paypal_mode = $inputs['paypal_mode'];
         $settings->paypal_client_id = $inputs['paypal_client_id'];
@@ -221,7 +222,8 @@ class SettingsController extends MainAdminController
         $settings->razorpay_payment_on_off = $inputs['razorpay_payment_on_off'];
         $settings->razorpay_key = $inputs['razorpay_key'];
         $settings->razorpay_secret = $inputs['razorpay_secret'];
-
+        */
+        $settings->vas_servicecode = $inputs['vas_service_code'];
         $settings->paystack_payment_on_off = $inputs['paystack_payment_on_off'];
         $settings->paystack_secret_key = $inputs['paystack_secret_key'];
         $settings->paystack_public_key = $inputs['paystack_public_key'];

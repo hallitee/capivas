@@ -73,7 +73,7 @@
         @endif
         
 
-        @if(getcong('paystack_payment_on_off')==1)        
+        @if(getcong('paystack_payment_on_off')==1)           
         <div class="col-md-6 col-sm-4 col-xs-12">
           {!! Form::open(array('url' => 'pay','class'=>'','id'=>'','role'=>'form','method'=>'POST')) !!}
           <input type="hidden" name="amount" value="{{$plan_info->plan_price}}">

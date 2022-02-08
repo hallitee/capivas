@@ -8,9 +8,10 @@
 
 <div class="vfx_banner_slider-area text-white">
   <div id="vfx_banner_slider" class="owl-carousel vfx_banner_slider">
-    
+
     @foreach($slider as $slider_data)
     <div class="banner-item" style="background-image:url({{URL::to('upload/source/'.$slider_data->slider_image)}});">
+
       <div class="overlay-70"> 
         @if($slider_data->slider_type=="Movies")
         <a class="" href="{{ URL::to('movies/'.App\Movies::getMoviesInfo($slider_data->slider_post_id,'video_slug').'/'.$slider_data->slider_post_id) }}">
@@ -35,9 +36,10 @@
         @endif
         <div class="vfx_banner_content">
           <div class="container">
+
             <div class="row">
               <div class="col-lg-8 col-md-8"> 
-                <h2 class="banner-title">
+                <h4 class="banner-title">
                   
                   @if($slider_data->slider_type=="Movies")
                   <a class="" href="{{ URL::to('movies/'.App\Movies::getMoviesInfo($slider_data->slider_post_id,'video_slug').'/'.$slider_data->slider_post_id) }}">
@@ -92,7 +94,7 @@
         <div class="col-sm-12 col-xs-6">
           <div class="vfx_section_header">
             <h2 class="vfx_section_title">
-              Recenty Views
+              Recently Viewed
             </h2>
           </div>
         </div>        
@@ -135,7 +137,8 @@
     </div>
   </div>
   @endif
-
+  {{ var_dump($home_sections->section1_latest_movie)}}
+  @if(!empty($home_sections->section1_latest_movie)) 
   <div class="section section-padding vfx_movie_section_block">
     <div class="container">
       <div class="row">
@@ -182,7 +185,9 @@
       </div>
     </div>
   </div>
-   
+  @endif
+
+  @if(!empty($home_sections->section2_latest_series)) 
   <div class="section section-padding bg-image tv_show gray_bg">
     <div class="container">
       <div class="row">
@@ -216,7 +221,8 @@
       </div>
     </div>
   </div> 
-
+  @endif
+  @if(!empty($home_sections->section3_popular_movie)) 
     <div class="section section-padding vfx_movie_section_block">
     <div class="container">
       <div class="row">
@@ -262,7 +268,8 @@
       </div>
     </div>
   </div>
-
+  @endif
+  @if(!empty($home_sections->section3_popular_series)) 
   <div class="section section-padding bg-image tv_show gray_bg">
     <div class="container">
       <div class="row">
@@ -293,7 +300,8 @@
       </div>
     </div>
   </div> 
-  
+  @endif
+  @if($home_sections_list3->count()!=0) 
   @if($home_sections->section3_type=="Series")
 
   <div class="section section-padding bg-image tv_show gray_bg">
@@ -370,8 +378,8 @@
     </div>
   </div>
   @endif
-  
-
+  @endif
+  @if($home_sections_list4->count()!=0) 
   @if($home_sections->section4_type=="Series")
 
   <div class="section section-padding bg-image tv_show gray_bg">
@@ -452,7 +460,8 @@
     </div>
   </div>
   @endif
-
+  @endif
+  @if($home_sections_list5->count()!=0) 
   @if($home_sections->section5_type=="Series")
 
   <div class="section section-padding bg-image tv_show gray_bg">
@@ -534,7 +543,7 @@
     </div>
   </div>
   @endif
-
+@endif
     
 </div>
 

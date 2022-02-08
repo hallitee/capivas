@@ -233,7 +233,7 @@ if (! function_exists('check_verify_purchase')) {
             \Redirect::to('admin/verify_purchase')->send();             
             exit;
         }*/
-        
+      //  echo "check_verify_true";
         return true; 
     }
 }

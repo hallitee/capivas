@@ -8,7 +8,7 @@ use App\Movies;
 use App\Genres;
 use App\Language;
 use App\RecentlyWatched;
-
+//use App\Http\helpers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Session;
@@ -187,7 +187,7 @@ class MoviesController extends MainAdminController
          {
              $image_source           =   $inputs['thumb_link'];
              $save_to                =   public_path('/upload/source/'.$inputs['video_image_thumb']);
-             grab_image($image_source,$save_to);
+             //grab_image($image_source,$save_to);
 
  
          }

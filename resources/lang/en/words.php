@@ -202,7 +202,7 @@ return [
     'host' => 'Host',
     'port' => 'Port',
     'encryption' => 'Encryption',
-
+    'vas_service_code'=>'VAS Service Code',
     'currency_code' => 'Currency Code',
     'paypal_payment' => 'Paypal Payment',
     'payment_mode' => 'Payment Mode',

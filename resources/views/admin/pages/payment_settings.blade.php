@@ -56,6 +56,15 @@
                       <input type="text" name="currency_code" value="{{ isset($settings->currency_code) ? $settings->currency_code : null }}" class="form-control">
                     </div>
                   </div> 
+                  <h5 class="m-b-5"><i class="fa fa-mobile"></i> <b>VAS Settings</b> </h5>
+
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">{{trans('words.vas_service_code')}}</label>
+                    <div class="col-sm-8">
+                      <input type="text" name="vas_service_code" value="{{ isset($settings->vas_servicecode) ? $settings->vas_servicecode : null }}" class="form-control">
+                    </div>
+                  </div>
+                    <!--
                   <br/>
 
                  <h5 class="m-b-5"><i class="fa fa-cc-paypal"></i> <b>Paypal Settings</b></h5>
@@ -72,6 +81,7 @@
                             </select>
                       </div>
                   </div>
+                
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">{{trans('words.payment_mode')}}</label>
                       <div class="col-sm-8">
@@ -146,6 +156,7 @@
                       <input type="text" name="razorpay_secret" value="{{ isset($settings->razorpay_secret) ? $settings->razorpay_secret : null }}" class="form-control">
                     </div>
                   </div>
+                -->
                   <br/>
                   <h5 class="m-b-5">₦ <b>Paystack Settings</b></h5>
                  <small id="emailHelp" class="form-text text-muted">For more info <a href="https://support.paystack.com/hc/en-us/articles/360009881600-Paystack-Test-Keys-Live-Keys-and-Webhooks" target="_blank">click here</a></small>
@@ -172,7 +183,7 @@
                       <input type="text" name="paystack_public_key" value="{{ isset($settings->paystack_public_key) ? $settings->paystack_public_key : null }}" class="form-control">
                     </div>
                   </div>
-                   
+              
                   <div class="form-group">
                     <div class="offset-sm-3 col-sm-9">
                       <button type="submit" class="btn btn-primary waves-effect waves-light"> {{trans('words.save_settings')}} </button>                      
