@@ -68,6 +68,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </div>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -140,7 +141,6 @@
     </div>
   </div>
   <?php endif; ?>
-  <?php echo e(var_dump($home_sections->section1_latest_movie)); ?>
 
   <?php if(!empty($home_sections->section1_latest_movie)): ?> 
   <div class="section section-padding vfx_movie_section_block">

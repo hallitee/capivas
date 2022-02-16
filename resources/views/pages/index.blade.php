@@ -66,6 +66,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </div>
     @endforeach
@@ -137,7 +138,7 @@
     </div>
   </div>
   @endif
-  {{ var_dump($home_sections->section1_latest_movie)}}
+
   @if(!empty($home_sections->section1_latest_movie)) 
   <div class="section section-padding vfx_movie_section_block">
     <div class="container">
